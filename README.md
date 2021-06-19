@@ -2,7 +2,7 @@
  
 # TITLE: Flight Prices Prediction Using Machine Learning
   
-**AIM: ** 
+**AIM:** 
 
 The principle focus of our project is to perform data analysis and train a model using the most popular Machine Learning algorithm –Random forest in order to analyse the historical data that is present regarding price prediction of flight tickets by analysing the optimal features.
 
@@ -19,20 +19,37 @@ The flight ticket buying system is to purchase a ticket many days prior to fligh
 The dataset we have considered, has information of different airlines with informative features of a flight that determine the prices of the air tickets effectively. This phase is very important since it defines the problem under solving. 
 Original format of the dataset: XLSX 
 A brief explanation of every column in the dataset is as follows: 
+
 ➢ 	Out Date – The date of the journey
+
 ➢	Out-Time – The timestamp at which journey commences from the source
+
 ➢	Out-Cities – The source from which the service begins.
+
 ➢	Out-Airline – The type of airline chosen for the journey
+
 ➢	Return-Date– Date of return journey
+
 ➢	Return Time-The timestamp at which journey starts for return journey type.
+
 ➢	Return Cities – The destination from which the service/journey begins
+
 ➢	Return Airline- The type of airline chosen for return journey.
+
 ➢	Out travel time- Time taken to reach from source to destination.
+
 ➢	Return travel time- Time taken to reach from destination to source
+
 ➢	Out Journey Type- One stop or non- stop.
+
 ➢	Return Journey Type- One stop or non-stop
+
 ➢	Out Stop Cities- intermediate cities for one-stop type journey
+
 ➢	Return Stop Cities- intermediate cities for return one-stop type journey
+
 ➢	Timestamp-time stamp of the particular journey
+
 ➢	Sort¬- best or cheap
+
 ➢	Price – The price of the ticket.
