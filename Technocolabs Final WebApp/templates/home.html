@@ -1,0 +1,195 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Price Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+      <link rel="stylesheet" href="static/css/styles.css">
+
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">FLIGHT PRICE PREDICTION</a>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+
+    <div class="container">
+	<br>
+
+
+
+        <form action="/predict" method="post">
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Departure Date</h5>
+                            <!-- Departure -->
+                            <input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Arrival Date</h5>
+                            <!-- Arrival -->
+                            <input type="datetime-local" name="Arrival_Time" id="Arrival_Time" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Origin</h5>
+                            <select name="Out_Cities" id="Out_Cities" required="required">
+                              <!-- AMD [Ahmedabad] missing one -->
+                              <option value="Bengaluru">Bengaluru</option>
+                              <option value="Mumbai">Mumbai</option>
+                              <option value="Kozhikode">Kozhikode</option>
+                              <option value="Kolkata">Kolkata</option>
+                              <option value="Kannur">Kannur</option>
+                              <option value="Delhi">Delhi</option>
+                              <option value="Guwahati">Guwahati</option>
+                              <option value="Leh">Leh</option>
+                              <option value="Ranchi">Ranchi</option>
+                              <option value="Jaipur">Jaipur</option>
+                              <option value="Chennai">Chennai</option>
+                              <option value="Shillong">Shillong</option>
+                              <option value="Varanasi">Varanasi</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Destination</h5>
+                            <!-- Destination -->
+                            <select name="Return_Cities" id="Return_Cities" required="required">
+                              <!-- AGX [Agatti Island] missing one -->
+                                <option value="Ahmedabad">Ahmedabad</option>
+                                <option value="Amritsar">Amritsar</option>
+                                <option value="Bengaluru">Bengaluru</option>
+                                <option value="Coimbatore">Coimbatore</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Guwahati">Guwahati</option>
+                                <option value="Gorakhpur">Gorakhpur</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Mangalore">Mangalore</option>
+                                <option value="Lucknow">Lucknow</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Patna">Patna</option>
+                                <option value="Surat">Surat</option>
+                                <option value="Vijaywada">Vijaywada</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Stopage</h5>
+                            <!-- Total Stops -->
+                            <select name="Total_Stops" required="required">
+                                <option value="0">Non-Stop</option>
+                                <option value="1">1</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Select the Airline</h5>
+
+                            <select name="Out_Airline" id="Out_Airline" required="required">
+                              <!-- Airline missing Air India -->
+                                <option value="IndiGo">IndiGo</option>
+                                <option value="Multiple Airlines">Multiple Airlines</option>
+                                <option value="SpiceJet">SpiceJet</option>
+                                <option value="Vistara">Vistara</option>
+                                <option value="AirAsia India">AirAsia India</option>
+                                <option value="GoAir">GoAir</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+        <br>
+        <br>
+        <h4><u>{{ prediction_text }}</u></h4>
+
+        <br>
+        <h4>Shivam Dhakate-Technocolabs</h4>
+        <p>©2021 Shivam Dhakate </p>
+
+    </div>
+
+
+
+
+    <!-- JavaScript  -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
