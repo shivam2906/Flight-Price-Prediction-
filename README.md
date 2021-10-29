@@ -52,4 +52,4 @@ A brief explanation of every column in the dataset is as follows:
 
 ➢	Sort¬- best or cheap
 
-➢	Price – The price of the ticket.
+➢	Price – The price of the ticket
